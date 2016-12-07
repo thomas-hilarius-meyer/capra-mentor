@@ -345,6 +345,51 @@ sub notenuebersicht {
         $notenscroll->Label( -text => "HA fehlt" ),        
         );
 
+	# Datumszeile:   - Datum wir als Schüler 0 abgespreichert...
+	        $notenscroll->Label( -text => "-" )->grid(
+            "x","x",
+#blubb(schueler)(fach)(stufe)(halbjahr)(nr)
+            $notenscroll->Entry(
+                -textvariable => \$mentor_klassenarbeiten[0]{$mentor_welches_fach}[$mentor_stufe][$mentor_hj][1],
+                -width        => 5
+                ),
+           $notenscroll->Entry(
+                -textvariable => \$mentor_klassenarbeiten[0]{$mentor_welches_fach}[$mentor_stufe][$mentor_hj][2],
+                -width        => 5
+                ),
+            $notenscroll->Entry(
+                -textvariable => \$mentor_klassenarbeiten[0]{$mentor_welches_fach}[$mentor_stufe][$mentor_hj][3],
+                -width        => 5
+                ),
+            $notenscroll->Entry(
+                -textvariable => \$mentor_tests[0]{$mentor_welches_fach}[$mentor_stufe][$mentor_hj][1],
+                -width        => 5
+                ),
+            $notenscroll->Entry(
+                -textvariable => \$mentor_tests[0]{$mentor_welches_fach}[$mentor_stufe][$mentor_hj][2],
+                -width        => 5
+                ),
+            $notenscroll->Entry(
+                -textvariable => \$mentor_tests[0]{$mentor_welches_fach}[$mentor_stufe][$mentor_hj][3],
+                -width        => 5
+                ),
+            $notenscroll->Entry(
+                -textvariable => \$mentor_tests[0]{$mentor_welches_fach}[$mentor_stufe][$mentor_hj][4],
+                -width        => 5
+                ),
+           $notenscroll->Entry(
+                -textvariable => \$mentor_heft[0]{$mentor_welches_fach}[$mentor_stufe][$mentor_hj][1],
+                -width        => 5
+                ),
+            $notenscroll->Entry(
+                -textvariable => \$mentor_abfrage[0]{$mentor_welches_fach}[$mentor_stufe][$mentor_hj][1],
+                -width        => 5
+                ),
+            "x","x","x"
+            );
+
+
+	# Zeilen für die Schüler:
     for ( my $i = 1; $i <= $mentor_schuelerzahl; $i++ ) {
         $notenscroll->Label( -text => "$i :" )->grid(
             $notenscroll->Entry(
